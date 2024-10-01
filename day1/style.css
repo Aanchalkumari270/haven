@@ -1,0 +1,32 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+body{
+    background-color: rgb(216, 162, 229);}
+
+#heading{
+    background-color: aqua;
+    font-size: medium;
+    border-color: aquamarine;
+    border-width: 3px;
+    border-style: dotted;
+    border-radius: 12px;
+    text-align: center;
+    color: azure;
+}
+table{
+    width: 50%;
+    border: 5px;
+    font-size: large;
+    font-weight: bold;
+    color: blue;
+
+
+
+}
+#contain{
+    display: flex;
+    justify-content: center;
+}
