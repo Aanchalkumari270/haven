@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aanchal</title>
+</head>
+<style>
+  #contain{
+    display: flex;
+    justify-content: center;
+  }
+  #loginForm{
+    background-color: aqua;
+    font-size: medium;
+    border-color: rgb(0, 3, 2);
+    border-width: 3px;
+    border-style: lined;
+    border-radius: 12px;
+    text-align: center;
+    color: azure;
+}
+</style>
+<body>
+  <div id="xyz">
+    <form id="loginForm" onsubmit="return validateForm()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <input type="reset" value="reset">
+      <script src="./test_CE.js"></script>
+      <button onclick="validateForm()" id="login">Login</button>
+     
+    </form>
+    
+
+  </div>
+  <p id="error-message" style="color: rgb(37, 15, 209);"></p>
+  
+</body>
+
+
+
+
+
+</html>
