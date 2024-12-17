@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Conversion</title>
+    <script>
+        async function convertCurrency() {
+            let amount = document.getElementById("amount").value;
+            if (!amount||amount <= 0) {
+                alert("Please enter a valid amount!");
+                return;
+            }
+            const url = `https://api.exchangerate-api.com/v4/latest/USD`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                let conversionRate = data.rates.INR;
+                let convertedAmount = (amount * conversionRate).toFixed(2);
+                document.getElementById("result").innerHTML = `${amount} USD = ${convertedAmount} INR`;
+            } catch (error) {
+                document.getElementById("result").innerHTML = "Error fetching conversion rate. Please try again later.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Currency Conversion(USD to INR)</h2>
+    <form onsubmit="event.preventDefault(); convertCurrency();">
+        <label for="amount">Enter USD:</label>
+        <input type="number" id="amount" name="amount" min="1" required><br><br>
+        <input type="submit" value="Convert">
+    </form>
+    <h3 id="result"></h3>
+</body>
+</html>
